@@ -260,10 +260,11 @@ section[id] {
   background-color: #d7ecf2;
   background-image: linear-gradient(180deg, #e3f2f6 0%, #cfe6ee 100%);
   background-size: cover;
-  background-position: 20% 79%;
+  background-position: 70% 20%;
   background-repeat: no-repeat;
 }
 
+/* pale veil over the photo, like in the mockup */
 .hero::before {
   content: '';
   position: absolute;
@@ -311,9 +312,9 @@ section[id] {
   aspect-ratio: 265 / 335;
   border: 8px solid #fff;
   border-radius: 70px;
+  background: #cfe6ee;
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
   overflow: hidden;
-  background: #cfe6ee;
 }
 
 .hero__window img {

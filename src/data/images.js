@@ -1,7 +1,6 @@
 const base = import.meta.env.BASE_URL;
 const p = (name) => `${base}images/${name}`;
 
-// Set to false if the "window" with the wing is already part of hero-bg.png
 export const SHOW_HERO_WINDOW = true;
 
 export const IMAGES = {

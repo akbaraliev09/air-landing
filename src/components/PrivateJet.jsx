@@ -10,6 +10,7 @@ export default function PrivateJet() {
       {JET_SECTIONS.map((item) => (
         <div key={item.title} className={`jet-row ${item.reverse ? 'jet-row--reverse' : ''}`}>
           <div className="jet-row__inner">
+            
             <Img className="jet-row__img" src={IMAGES[item.image]} alt={item.title} />
             <div className="jet-row__text">
               <h3>{item.title}</h3>

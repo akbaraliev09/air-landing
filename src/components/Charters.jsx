@@ -9,6 +9,7 @@ export default function Charters({ onSelect }) {
       <h2 className="section__title">Luxury Charters</h2>
 
       <div className="container charters__grid">
+        
         {IMAGES.charters.map((plane) => (
           <button key={plane.name} type="button" className="charter-card" onClick={onSelect}>
             <Img className="charter-card__img" src={plane.src} alt={plane.name} />

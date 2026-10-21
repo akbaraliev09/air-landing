@@ -37,7 +37,6 @@ export const BurgerIcon = () => (
   </svg>
 );
 
-// ---- built-in spec icons (used if icon-*.png files are not added) ----
 export const SeatIcon = () => (
   <svg viewBox="0 0 48 48" aria-hidden="true">
     <path d="M31 6c1.5-.5 3 .3 3.4 1.8l4.2 16c.4 1.5-.5 3-2 3.4l-3 .8-6.6-22z" fill="#ec5b62" />

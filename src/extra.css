@@ -1,0 +1,391 @@
+/* ===== Fix: header jumped to the right when a modal opened =====
+   The modal hides the page scrollbar; reserving its space keeps the layout still. */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* ===== Forms ===== */
+.hp {
+  position: absolute !important;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+.btn--ghost {
+  background: #fff;
+  color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: #efeef7;
+}
+
+.link-btn--danger {
+  color: #b3261e;
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ===== Admin: login ===== */
+.login {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 16px;
+  background: #f5f5fa;
+}
+
+.login__card {
+  width: min(100%, 400px);
+  padding: 32px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(60, 60, 90, 0.15);
+}
+
+.login__logo {
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.login__title {
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.login__back {
+  display: block;
+  margin: 18px auto 0;
+}
+
+.login .form-error {
+  margin: 0 0 12px;
+}
+
+/* ===== Admin: dashboard ===== */
+.admin {
+  min-height: 100vh;
+  background: #f5f5fa;
+}
+
+.admin .container {
+  width: min(100% - 48px, 1200px);
+}
+
+.admin__bar {
+  background: #fff;
+  border-bottom: 1px solid #e6e6ef;
+}
+
+.admin__bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  min-height: 68px;
+  padding-block: 10px;
+}
+
+.admin__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+}
+
+.admin__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin__who {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.admin__main {
+  padding: 28px 0 60px;
+}
+
+.admin__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.stat {
+  padding: 16px 18px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.stat span {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.admin__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.admin__filters input,
+.admin__filters select,
+.admin__modal-status select {
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 0.85rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.admin__filters input {
+  flex: 1 1 240px;
+}
+
+.admin__table-wrap {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.admin table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.admin th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+}
+
+.admin td {
+  padding: 12px 14px;
+  vertical-align: top;
+  border-bottom: 1px solid #f0f0f5;
+}
+
+.admin tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin td a {
+  color: var(--purple);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.admin__summary {
+  min-width: 180px;
+  max-width: 320px;
+  word-break: break-word;
+}
+
+.admin__row-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.status {
+  padding: 5px 8px;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+
+.status--new {
+  background: #e7efff;
+  color: #1f4fbf;
+}
+
+.status--in_progress {
+  background: #fff3da;
+  color: #8a5a00;
+}
+
+.status--done {
+  background: #e1f6e8;
+  color: #17753a;
+}
+
+.status--cancelled {
+  background: #f1f1f1;
+  color: #666;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.badge--sent {
+  background: #e1f6e8;
+  color: #17753a;
+}
+
+.badge--failed {
+  background: #fde7e5;
+  color: #b3261e;
+}
+
+.badge--pending {
+  background: #f1f1f1;
+  color: #666;
+}
+
+.admin__empty {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.admin__modal-status {
+  margin-top: 4px;
+}
+
+@media (max-width: 700px) {
+  .admin__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ===== Admin: notice ===== */
+.admin__notice {
+  margin-bottom: 18px;
+  padding: 12px 16px;
+  background: #fff3da;
+  border-radius: 8px;
+  color: #8a5a00;
+  font-size: 0.85rem;
+}
+
+/* ===== Header: logged-in state fits in one row ===== */
+.header__inner {
+  gap: 16px;
+}
+
+.nav a,
+.header__auth > * {
+  white-space: nowrap;
+}
+
+.header__auth {
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.header__auth .btn--small {
+  padding: 8px 14px;
+}
+
+.header__user {
+  display: none;
+}
+
+@media (min-width: 1180px) {
+  .header__user {
+    display: inline;
+  }
+}
+
+@media (min-width: 961px) {
+  .nav {
+    gap: 16px;
+  }
+}
+
+/* burger menu a bit earlier, so nav + admin buttons never wrap */
+@media (min-width: 961px) and (max-width: 1100px) {
+  .burger {
+    display: inline-flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 4px 24px 14px;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    font-size: 0.95rem;
+  }
+
+  .nav--open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+@media (max-width: 560px) {
+  .header__inner {
+    gap: 8px;
+  }
+
+  .header__auth {
+    gap: 6px;
+  }
+
+  .header__auth .btn--small {
+    padding: 7px 10px;
+    font-size: 0.72rem;
+  }
+
+  .logo__img {
+    height: 28px;
+  }
+}
+
+.admin__notice--error {
+  background: #fde7e5;
+  color: #b3261e;
+}

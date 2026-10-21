@@ -3,7 +3,7 @@ import Logo from './Logo.jsx';
 import { BurgerIcon } from './Icons.jsx';
 import { NAV_LINKS } from '../data/content.js';
 
-export default function Header({ user, onNav, onSignIn, onRegister, onSignOut }) {
+export default function Header({ user, onNav, onSignIn, onRegister, onSignOut, onAdmin }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -39,6 +39,11 @@ export default function Header({ user, onNav, onSignIn, onRegister, onSignOut })
           {user ? (
             <>
               <span className="header__user">Hi, {user.name}</span>
+              {user.isAdmin && (
+                <button type="button" className="btn btn--small btn--ghost" onClick={onAdmin}>
+                  Admin panel
+                </button>
+              )}
               <button type="button" className="btn btn--small" onClick={onSignOut}>
                 Sign Out
               </button>
